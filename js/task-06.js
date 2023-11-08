@@ -10,5 +10,4 @@ function handleSearch(e) {
     input.classList.add("invalid");
     input.classList.remove("valid");
   }
-  console.log(e);
 }
