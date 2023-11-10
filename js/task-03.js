@@ -15,9 +15,8 @@ const images = [
 
 const itemImgs = document.querySelector(".gallery");
 const newImg = images.map((image) => {
-  const itemImg = document.createElement("li");
-  itemImg.innerHTML = `<img src =${image.url}  alt =${image.alt}  class="gallery-img"> `;
-  itemImg.classList.add("gallery-item");
-  itemImgs.insertAdjacentElement("beforeend", itemImg);
-  return itemImg;
+  return itemImgs.insertAdjacentHTML(
+    "beforeend",
+    `<li class="gallery-item"><img src="${image.url}" alt="${image.alt}" class="gallery-img"></li>`
+  );
 });

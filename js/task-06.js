@@ -4,10 +4,12 @@ input.addEventListener("blur", handleSearch);
 function handleSearch(e) {
   const trimed = e.currentTarget.value.trim();
   if (trimed.length === Number(input.dataset.length)) {
-    input.classList.add("valid");
-    input.classList.remove("invalid");
+    validation(input, "valid", "invalid");
   } else {
-    input.classList.add("invalid");
-    input.classList.remove("valid");
+    validation(input, "invalid", "valid");
   }
+}
+function validation(elements, addClass, removeClas) {
+  elements.classList.add(addClass);
+  elements.classList.remove(removeClas);
 }
